@@ -1,1 +1,81 @@
-Hello World
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+<meta name="description" content="Topic Models based on Stochastic Block Models" />
+<meta name="keywords" content="topic model, NLP, SBM, community detection, complex networks" />
+<link rel="shortcut icon" href="paper.ico" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>TopSBM: Topic Models based on Stochastic Block Models </title>
+</head>
+
+
+<body id="top">
+
+
+<table style="width:100%" class="table1"><tr>
+<td><h1 class="title">TopSBM: Topic Models based on Stochastic Block Models </h1>      </td>
+<!--<td><a type="application/rss+xml" href="rss.xml" title="RSS feed"><img src="rss.png" style="border-width:0px;width:65px;height:65px" alt="[RSS feed]" /></a></td><IMG SRC="triangles.png" BORDER=0 STYLE="float:center; margin:0px 20px 20px 20px" HEIGHT="100">-->
+</tr></table>
+
+
+
+
+
+
+      
+    <p> <a href="https://en.wikipedia.org/wiki/Topic_model"> Topic models </a> have wide applicability, but its most popular flavours (based on Dirichlet priors, such as LDA) make unreasonable asumptions about the data which severly limit its applicability. Here we explore an alternative way of doing topic models, based on stochastic block models (SBM).</p>
+ <IMG SRC="triangles.png" BORDER=0   HEIGHT="100">
+      
+<h3> Example: 63 Wikipedia articles related to Physics</h3>
+
+
+
+	<ul>
+	<li> Hierarchy level 1: <a href=""> 41 topics </a> (click <a href=""> here </a> to see topic distribution in each document) and <a href=""> 32 document groups </a>
+	  <li> Hierarchy level 2: <a href=""> 6 topics </a> (click <a href=""> here </a> to see topic distribution in each document) and <a href=""> 9 document groups </a>
+      </ul>
+
+       <IMG SRC="bipartite.png" BORDER=0   HEIGHT="200">
+      
+	<h3> Install </h3>
+	
+<p> An example of how to use TopSBM is shown <a href="https://github.com/martingerlach/hSBM_Topicmodel/blob/master/hsbm-topicmodel-tutorial.ipynb"> here</a>. To run it yourself, you need to:</p>
+      
+	<ol>
+	  <li>  Install <a href="https://graph-tool.skewed.de/"> graph-tool </a>: 
+	    <ul>
+	      <li> Using <a href="https://www.docker.com/"> Docker </a>: <br> <i> docker pull tiagopeixoto/graph-tool </i> </li>
+	      <li> or: see detailed <a href="https://git.skewed.de/count0/graph-tool/wikis/installation-instructions"> Installation Instructions </a>.</li>
+	    </ul>
+	  </li>
+
+	  <li>  Download the <a href="https://github.com/martingerlach/hSBM_Topicmodel"> package </a> SBM topic models:
+	    <ul>
+	      <li> Using <a href="https://git-scm.com/"> git </a>: <br> <i> git clone  https://github.com/martingerlach/hSBM_Topicmodel.git </i> </li>
+	      <li> or: download <a href="https://github.com/martingerlach/hSBM_Topicmodel/archive/master.zip"> zip file</a>. </li>
+	    </ul>
+	  </li>
+	  
+	  <li> Explore the tutorial using <a href="http://www.jupyter.org"> Jupyter </a> notebooks:
+	      <ul>
+	    <li> <i> jupyter-notebook hsbm-topicmodel-tutorial.ipynb </i> </li>
+	    
+	  </li>
+	  </ol>
+
+
+	<h3> References: </h3>
+
+	<ul>
+	  <li> </li>
+	  </ul>
+    
+
+
+</body>
+
+</html>
+
