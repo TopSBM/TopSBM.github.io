@@ -27,7 +27,7 @@
 
       
     <p> <a href="https://en.wikipedia.org/wiki/Topic_model" rel="nofollow" target="_blank"> Topic models </a> have wide applicability, but its most popular flavours (based on Dirichlet priors, such as LDA) make unreasonable asumptions about the data which severly limit its applicability. Here we explore an alternative way of doing topic models, based on stochastic block models (SBM).</p>
- <IMG SRC="triangles.png" BORDER=0   HEIGHT="100">
+ <IMG SRC="triangles.png" BORDER=0   HEIGHT="150">
       
 <h3> Example: 63 Wikipedia articles related to Physics</h3>
 
@@ -38,17 +38,19 @@
 	  <li> Hierarchy level 2: <a href="" rel="nofollow" target="_blank"> 6 topics </a> (click <a href="" rel="nofollow" target="_blank"> here </a> to see topic distribution in each document) and <a href="" rel="nofollow" target="_blank"> 9 document groups </a>
       </ul>
 
-       <IMG SRC="bipartite.png" BORDER=0   HEIGHT="200">
+       <IMG SRC="bipartite.png" BORDER=0   HEIGHT="300">
       
 	<h3> Install </h3>
 	
-<p> An example of how to use TopSBM is shown <a href="https://github.com/martingerlach/hSBM_Topicmodel/blob/master/hsbm-topicmodel-tutorial.ipynb" rel="nofollow" target="_blank"> here</a>. To run it yourself, you need to:</p>
+<p> An example of how to use TopSBM is shown <a href="TopSBM-tutorial.html" rel="nofollow" target="_blank"> here</a>. To run it yourself, you need to:</p>
       
 	<ol>
 	  <li>  Install <a href="https://graph-tool.skewed.de/" rel="nofollow" target="_blank"> graph-tool </a>: 
 	    <ul>
-	      <li> Using <a href="https://www.docker.com/" rel="nofollow" target="_blank"> Docker </a>: <br> <i> docker pull tiagopeixoto/graph-tool </i> </li>
-	      <li> or: see detailed <a href="https://git.skewed.de/count0/graph-tool/wikis/installation-instructions" rel="nofollow" target="_blank"> Installation Instructions </a>.</li>
+	      <li> see detailed <a href="https://git.skewed.de/count0/graph-tool/wikis/installation-instructions" rel="nofollow" target="_blank"> Installation Instructions </a>.</li>
+	      <li> or using <a href="https://www.docker.com/" rel="nofollow" target="_blank"> Docker </a>: <br> <i> docker pull tiagopeixoto/graph-tool </i> </li>
+
+	      <li> or using <a href="https://gitlab.com/ostrokach-forge/graph-tool" rel="nofollow" target="_blank"> Conda</a> (only for linux).</li>
 	    </ul>
 	  </li>
 
@@ -61,7 +63,7 @@
 	  
 	  <li> Explore the tutorial using <a href="http://www.jupyter.org" rel="nofollow" target="_blank" rel="nofollow" target="_blank"> Jupyter </a> notebooks:
 	      <ul>
-	    <li> <i> jupyter-notebook hsbm-topicmodel-tutorial.ipynb </i> </li>
+	    <li> <i> jupyter-notebook TopSBM-tutorial.ipynb </i> </li>
 	    
 	  </li>
 	  </ol>
