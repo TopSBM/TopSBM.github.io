@@ -3,11 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
-<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <meta name="description" content="Topic Models based on Stochastic Block Models" />
 <meta name="keywords" content="topic model, NLP, SBM, community detection, complex networks" />
 <link rel="shortcut icon" href="paper.ico" />
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="main.css" />
 <title>TopSBM: Topic Models based on Stochastic Block Models </title>
 </head>
 
@@ -15,75 +15,121 @@
 <body id="top">
 
 
-<table style="width:100%" class="table1"><tr>
-<td><h1 class="title">TopSBM: Topic Models based on Stochastic Block Models </h1>      </td>
-<!--<td><a type="application/rss+xml" href="rss.xml" title="RSS feed"><img src="rss.png" style="border-width:0px;width:65px;height:65px" alt="[RSS feed]" /></a></td><IMG SRC="triangles.png" BORDER=0 STYLE="float:center; margin:0px 20px 20px 20px" HEIGHT="100">-->
-</tr></table>
+<h1>TopSBM: Topic Models based on Stochastic Block Models </h1>
+<h2><i><a href="https://martingerlach.github.io/">M. Gerlach</a>, <a href="https://skewed.de/tiago">T. P. Peixoto</a>, and <a href="http://www.maths.usyd.edu.au/u/ega/">E. G. Altmann</a>, “A network approach to topic models,”  <a href="https://arxiv.org/abs/1708.01677"> [arXiv:1708.01677]</i></h2>
 
+<p> <a href="https://en.wikipedia.org/wiki/Topic_model" rel="nofollow"
+target="_blank"> Topic models </a> are a popular way to extract
+information from text data, but its most popular flavours (based on
+<a href="https://en.wikipedia.org/wiki/Dirichlet_distribution">Dirichlet</a>
+priors, such
+as <a href="https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation">LDA</a>)
+make unreasonable assumptions about the data which severely limit its
+applicability. Here we explore an alternative way of doing topic
+modelling, based
+on <a href="https://en.wikipedia.org/wiki/Stochastic_block_model"
+rel="nofollow" target="_blank"> stochastic block models (SBM)</a>, thus
+exploiting a mathematical connection with
+finding <a href="https://en.wikipedia.org/wiki/Community_structure">community
+structure</a> in networks.</p>
 
+To briefly illustrate some of the limitations of Dirichlet-based topic
+modelling, consider the simple multi-modal mixture of three topics shown
+below on the left. Since the Dirichlet distribution is unimodal, it
+severely distorts the topics inferred by LDA, as shown in the middle
+&mdash; even thought it is just a prior distribution over a
+heterogeneous topic mixture. The SBM formulation, on the other hand, can
+easily accommodate this kind of heterogeneity, since it is based on more
+general priors (see <a href="https://dx.doi.org/10.1103/PhysRevX.4.011047">here</a>, <a href="https://dx.doi.org/10.1103/PhysRevE.95.012317">here</a> and <a href="https://dx.doi.org/10.1103/PhysRevX.5.011033">here</a>).
 
+<p>
+<IMG SRC="triangles.png" style="display: block; margin: 0 auto; width: 400px">
 
+  <p>
+In addition to this, the SBM method is based a nonparametric “symmetric”
+formulation that allows for the simultaneous hierarchical clustering of
+documents as well as topics. Due to its nonparametric Bayesian nature,
+the number of topics in each category, as well as the shape and depth of
+the hierarchy, are automatically determined from
+the <a href="https://en.wikipedia.org/wiki/Posterior_probability">posterior
+distribution</a> according to the statistical evidence available,
+avoiding
+both <a href="https://en.wikipedia.org/wiki/Overfitting">overfitting and
+underfitting</a>.
 
+To illustrate the application of the method using real data, we show
+below an example using <a href="https://www.wikipedia.org/">wikipedia</a> articles.
 
-      
-    <p> <a href="https://en.wikipedia.org/wiki/Topic_model" rel="nofollow" target="_blank"> Topic models </a> have wide applicability, but its most popular flavours (based on Dirichlet priors, such as LDA) make unreasonable asumptions about the data which severly limit its applicability. Here we explore an alternative way of doing topic models, based on <a href="https://en.wikipedia.org/wiki/Stochastic_block_model" rel="nofollow" target="_blank"> stochastic block models (SBM) </a>.</p>
- <IMG SRC="triangles.png" BORDER=0   HEIGHT="150">
-      
 <h3> Example: 63 Wikipedia articles related to Physics</h3>
 
 
 
+<IMG SRC="bipartite.png" style="display: block; margin: 0 auto; width: 400px">
+
+The method divides both the documents and words into hierarchical
+groups. The divisions found in the first three hierarchical levels can
+be inspected below.
+  
 	<ul>
 	<li> Hierarchy level 1: 
-	<a href="topsbm_level_0_topics.html" rel="nofollow" target="_blank"> 21 topics </a> 
-	(click <a href="topsbm_level_0_topic-dist.html" rel="nofollow" target="_blank"> here </a> to see topic distribution in each document) 
-	and <a href="topsbm_level_0_clusters.html" rel="nofollow" target="_blank"> 5 document groups </a>
+	<a href="topsbm_level_0_topics.html"> 21 topics </a> 
+	(click <a href="topsbm_level_0_topic-dist.html"> here </a> to see topic distribution in each document) 
+	and <a href="topsbm_level_0_clusters.html"> 5 document groups </a>
 
-	<li> Hierarchy level 2: <a href="topsbm_level_1_topics.html" rel="nofollow" target="_blank"> 3 topics </a> 
-	(click <a href="topsbm_level_1_topic-dist.html" rel="nofollow" target="_blank"> here </a> to see topic distribution in each document) 
-	and <a href="topsbm_level_1_clusters.html" rel="nofollow" target="_blank"> 2 document groups </a>
+	<li> Hierarchy level 2: <a href="topsbm_level_1_topics.html"> 3 topics </a> 
+	(click <a href="topsbm_level_1_topic-dist.html"> here </a> to see topic distribution in each document) 
+	and <a href="topsbm_level_1_clusters.html"> 2 document groups </a>
 
-	<li> Hierarchy level 3: <a href="topsbm_level_2_topics.html" rel="nofollow" target="_blank"> 2 topics </a> 
-	(click <a href="topsbm_level_2_topic-dist.html" rel="nofollow" target="_blank"> here </a> to see topic distribution in each document) 
-	and <a href="topsbm_level_2_clusters.html" rel="nofollow" target="_blank"> 1 document group </a>
+	<li> Hierarchy level 3: <a href="topsbm_level_2_topics.html"> 2 topics </a> 
+	(click <a href="topsbm_level_2_topic-dist.html"> here </a> to see topic distribution in each document) 
+	and <a href="topsbm_level_2_clusters.html"> 1 document group </a>
 	</ul>
 
-       <IMG SRC="bipartite.png" BORDER=0   HEIGHT="400">
-      
-	<h3> Install </h3>
+
+
+
+  <h3> Installation and usage instructions </h3>
 	
-<p> An example of how to use TopSBM is shown <a href="TopSBM-tutorial.html" rel="nofollow" target="_blank"> here</a>. To run it yourself, you need to:</p>
+
+<p> The Python
+package <a href="https://graph-tool.skewed.de/">graph-tool</a> is
+needed, which also
+contains <a href="https://graph-tool.skewed.de/static/doc/demos/inference/inference.html">detailed
+documentation on SBM inference</a>.
+
+<p> A detailed example of how to use TopSBM is shown <a href="TopSBM-tutorial.html"> here</a>. To run it yourself, you need to:</p>
       
 	<ol>
-	  <li>  Install <a href="https://graph-tool.skewed.de/" rel="nofollow" target="_blank"> graph-tool </a>: 
+	  <li>  Install <a href="https://graph-tool.skewed.de/">graph-tool</a>: 
 	    <ul>
-	      <li> see detailed <a href="https://git.skewed.de/count0/graph-tool/wikis/installation-instructions" rel="nofollow" target="_blank"> Installation Instructions </a>.</li>
-	      <li> or using <a href="https://www.docker.com/" rel="nofollow" target="_blank"> Docker </a>: <br> <i> docker pull tiagopeixoto/graph-tool </i> </li>
+	      <li> see detailed <a href="https://git.skewed.de/count0/graph-tool/wikis/installation-instructions">installation instructions</a>.</li>
+	      <li> or using <a href="https://www.docker.com/">Docker</a>: <br> <i> docker pull tiagopeixoto/graph-tool </i> </li>
 
-	      <li> or using <a href="https://gitlab.com/ostrokach-forge/graph-tool" rel="nofollow" target="_blank"> Conda</a> (only for linux).</li>
+	      <!-- <li> or using <a href="https://gitlab.com/ostrokach-forge/graph-tool"> Conda</a> (only for linux).</li> -->
 	    </ul>
 	  </li>
 
-	  <li>  Download the <a href="https://github.com/martingerlach/hSBM_Topicmodel" rel="nofollow" target="_blank"> package </a> SBM topic models:
+	  <li>  Download the <a href="https://github.com/martingerlach/hSBM_Topicmodel"> package </a> SBM topic models:
 	    <ul>
-	      <li> Using <a href="https://git-scm.com/" rel="nofollow" target="_blank"> git </a>: <br> <i> git clone  https://github.com/martingerlach/hSBM_Topicmodel.git </i> </li>
+	      <li> Using <a href="https://git-scm.com/"> git </a>: <br> <i> git clone  https://github.com/martingerlach/hSBM_Topicmodel.git </i> </li>
 	      <li> or: download <a href="https://github.com/martingerlach/hSBM_Topicmodel/archive/master.zip"> zip file</a>. </li>
 	    </ul>
 	  </li>
 	  
-	  <li> Explore the tutorial using <a href="http://www.jupyter.org" rel="nofollow" target="_blank" rel="nofollow" target="_blank"> Jupyter </a> notebooks:
+	  <li> Explore the tutorial using <a href="http://www.jupyter.org"> Jupyter </a> notebooks:
 	      <ul>
 	    <li> <i> jupyter-notebook TopSBM-tutorial.ipynb </i> </li>
 	    
 	  </li>
 	  </ol>
 
-
+          
 	<h3> References: </h3>
 
 	<ul>
-	  <li> M. Gerlach, T. P. Peixoto, and E. G. Altmann, A network approach to topic models,  <a href="https://arxiv.org/abs/1708.01677" rel="nofollow" target="_blank"> [arXiv:1708.01677] </a>.</li>
-	  </ul>
+	  <li> M. Gerlach, T. P. Peixoto, and E. G. Altmann, A network approach to topic models,  <a href="https://arxiv.org/abs/1708.01677"> [arXiv:1708.01677] </a>.</li>
+	  <li> T. P. Peixoto, Bayesian stochastic blockmodeling <a href="https://arxiv.org/abs/1705.10225">[arXiv: 1705.10225]</a>.</li>
+	</ul>
     
 
 

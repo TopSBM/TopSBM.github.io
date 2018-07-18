@@ -1,0 +1,101 @@
+body {
+    background:none repeat scroll 0 0 #FAFAFA;
+    /* background-color:#DDDDDD; */
+    color:#333333;
+    font-family: 'Ovo', serif;
+    font-size:17px;
+    padding:0;
+    width:65em;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+p, dd, li {
+    line-height:1.4em;
+}
+
+/* ul, ol
+{ 
+     list-style-position:inside;
+} */
+
+a {
+    color:#004B6B;
+    text-decoration: none;
+}
+ 
+a:hover {
+    color: #6D4100;
+    text-decoration: underline;
+}
+
+h1 {
+    font-size:240%;
+    margin-top:0;
+    padding-top:20px;
+}
+
+h1, h2, h3, h4, h5,  h6 {
+    font-family: 'PT Serif', serif;
+    font-weight:normal;
+    margin:30px 0 10px;
+    padding:0;
+}
+
+h2 {
+    font-size:140%;
+}
+
+.code {
+    font-family: 'Droid Mono Sans', monospace;
+    font-size: smaller;
+}
+
+@media all and (min-width: 801px) {
+
+    dl.specs
+    {
+	margin: 2em 0;
+	padding: 0;
+    }
+
+    .specs dt
+    {
+	position: relative;
+	left: 0;
+	top: 1.1em;
+	width: 10em;
+	font-weight: bold;
+	white-space: nowrap;
+    }
+
+    .specs dd
+    {
+	border-left: 1px solid #000;
+	margin: 0 0 0 11em;
+	padding: 0 0 0 .8em;
+    }
+}
+
+@media all and (max-width: 800px) {
+
+    dl.specs
+    {
+	margin: 2em 0;
+	padding: 0;
+    }
+
+    .specs dt
+    {
+	font-weight: bold;
+	white-space: nowrap;
+	margin: 0.5em 0 0.5em 0;
+    }
+
+    .specs dd
+    {
+	border-left: 1px solid #000;
+	margin: 0 0 0 1em;
+	padding: 0 0 0 .5em;
+    }
+}
