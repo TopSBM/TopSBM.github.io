@@ -17,6 +17,8 @@
 
 <h1>TopSBM: Topic Models based on Stochastic Block Models </h1>
 
+<h2> Topic modeling with text data </h2>
+
 <p> <a href="https://en.wikipedia.org/wiki/Topic_model" rel="nofollow"
 target="_blank"> Topic models </a> are a popular way to extract
 information from text data, but its most popular flavours (based on
@@ -68,27 +70,47 @@ below an example using <a href="https://www.wikipedia.org/">wikipedia</a> articl
 The method divides both the documents and words into hierarchical
 groups. The divisions found in the first three hierarchical levels can
 be inspected below.
-  
+
 	<ul>
-	<li> Hierarchy level 1: 
-	<a href="topsbm_level_0_topics.html"> 21 topics </a> 
-	(click <a href="topsbm_level_0_topic-dist.html"> here </a> to see topic distribution in each document) 
+	<li> Hierarchy level 1:
+	<a href="topsbm_level_0_topics.html"> 21 topics </a>
+	(click <a href="topsbm_level_0_topic-dist.html"> here </a> to see topic distribution in each document)
 	and <a href="topsbm_level_0_clusters.html"> 5 document groups </a>
 
-	<li> Hierarchy level 2: <a href="topsbm_level_1_topics.html"> 3 topics </a> 
-	(click <a href="topsbm_level_1_topic-dist.html"> here </a> to see topic distribution in each document) 
+	<li> Hierarchy level 2: <a href="topsbm_level_1_topics.html"> 3 topics </a>
+	(click <a href="topsbm_level_1_topic-dist.html"> here </a> to see topic distribution in each document)
 	and <a href="topsbm_level_1_clusters.html"> 2 document groups </a>
 
-	<li> Hierarchy level 3: <a href="topsbm_level_2_topics.html"> 2 topics </a> 
-	(click <a href="topsbm_level_2_topic-dist.html"> here </a> to see topic distribution in each document) 
+	<li> Hierarchy level 3: <a href="topsbm_level_2_topics.html"> 2 topics </a>
+	(click <a href="topsbm_level_2_topic-dist.html"> here </a> to see topic distribution in each document)
 	and <a href="topsbm_level_2_clusters.html"> 1 document group </a>
 	</ul>
 
 
+  <h2> Topic modeling beyond just text data </h2>
+In many cases, we have additional information available about the documents, such as metadata or hyperlinks.
+We can incorporate these different types of data into a unified topic model by extending the above approach using multilayer stochastic block models.
+In this approach, each type of data is represented as a different layer in the network.
+
+We can represent the information contained in the Wikipedia dataset with the following three layers:
+<ul>
+<li> Text: The bipartite network of words and documents as nodes, where edges represent the number of times a word appears in a document  (same as above)
+<li> Hyperlinks: The network of documents, where a directed edge corresponds to a link between documents
+<li> Metadata: The bipartite network of categories and documents, where an edge represents that a category contains a given document.
+</ul>
+<IMG SRC="multilayer.png" style="display: block; margin: 0 auto; width: 400px" >
+
+<p>
+
+Using this representation, we can obtain a hierarchical clustering of words (i.e. topics) and documents not only based on the text but taking into account links and metadata information.
+We illustrate the differences in the document clustering when taking into account different types of data.
+<IMG SRC="multilayer-clustering.png" style="display: block; margin: 0 auto; width: 800px" >
 
 
-  <h3> Installation and usage instructions </h3>
-	
+
+
+
+<h2> Installation and usage instructions </h2>
 
 <p> The Python
 package <a href="https://graph-tool.skewed.de/">graph-tool</a> is
@@ -97,9 +119,9 @@ contains <a href="https://graph-tool.skewed.de/static/doc/demos/inference/infere
 documentation on SBM inference</a>.
 
 <p> A detailed example of how to use TopSBM is shown <a href="TopSBM-tutorial.html"> here</a>. To run it yourself, you need to:</p>
-      
+
 	<ol>
-	  <li>  Install <a href="https://graph-tool.skewed.de/">graph-tool</a>: 
+	  <li>  Install <a href="https://graph-tool.skewed.de/">graph-tool</a>:
 	    <ul>
 	      <li> see detailed <a href="https://git.skewed.de/count0/graph-tool/wikis/installation-instructions">installation instructions</a>.</li>
 	      <li> or using <a href="https://www.docker.com/">Docker</a>: <br> <i> docker pull tiagopeixoto/graph-tool </i> </li>
@@ -114,25 +136,26 @@ documentation on SBM inference</a>.
 	      <li> or: download <a href="https://github.com/martingerlach/hSBM_Topicmodel/archive/master.zip"> zip file</a>. </li>
 	    </ul>
 	  </li>
-	  
-	  <li> Explore the tutorial using <a href="http://www.jupyter.org"> Jupyter </a> notebooks:
+
+	  <li> Explore the tutorials using <a href="http://www.jupyter.org"> Jupyter </a> notebooks:
 	      <ul>
-	    <li> <i> jupyter-notebook TopSBM-tutorial.ipynb </i> </li>
-	    
+	    <li> <i> jupyter-notebook TopSBM-tutorial.ipynb  </i>  (topsbm for text)  </li>
+      <li> <i> Multilayer_SBM_Tutorial.ipynb  </i> (topsbm for different types of data) </li>
+
 	  </li>
 	  </ol>
 
-          
-	<h3> References: </h3>
+
+	<h2> References: </h2>
 
 	<ul>
-	   <li> <a href="https://martingerlach.github.io/">M. Gerlach</a>, <a href="https://skewed.de/tiago">T. P. Peixoto</a>, and <a href="http://www.maths.usyd.edu.au/u/ega/">E. G. Altmann</a>, “A network approach to topic models,”  <a href="http://advances.sciencemag.org/content/4/7/eaaq1360"> Science Advances 4, eaaq1360 (2018) </a> or <a href="https://arxiv.org/abs/1708.01677"> [arXiv:1708.01677] </a>.</li>
-	  <li> T. P. Peixoto, Bayesian stochastic blockmodeling <a href="https://arxiv.org/abs/1705.10225">[arXiv: 1705.10225]</a>.</li>
+    <li> C. C. Hyland, Y. Tao, L. Azizi, M. Gerlach, T. P. Peixoto, and E. G. Altmann  <em> Multilayer Networks for Text Analysis with Multiple Data Types </em>, to appear (2021)  </li>
+	  <li> <a href="https://martingerlach.github.io/">M. Gerlach</a>, <a href="https://skewed.de/tiago">T. P. Peixoto</a>, and <a href="http://www.maths.usyd.edu.au/u/ega/">E. G. Altmann</a>, <em> A network approach to topic models, </em>  <a href="http://advances.sciencemag.org/content/4/7/eaaq1360"> Science Advances 4, eaaq1360 (2018) </a> or <a href="https://arxiv.org/abs/1708.01677"> [arXiv:1708.01677] </a>.</li>
+	  <li> T. P. Peixoto, <em> Bayesian stochastic blockmodeling  </em> <a href="https://arxiv.org/abs/1705.10225">[arXiv: 1705.10225]</a>.</li>
 	</ul>
-    
+
 
 
 </body>
 
 </html>
-
