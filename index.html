@@ -17,7 +17,48 @@
 
 <h1>TopSBM: Topic Models based on Stochastic Block Models </h1>
 
-<h2> Topic modeling with text data </h2>
+
+<ul>
+  <li> Check a  <a href="TopSBM-tutorial.html"> simple example</a> or try it online in <a href="https://colab.research.google.com/github/edugalt/hSBM_Topicmodel/blob/master/TopSBM-colab.ipynb"> Google Colab</a> or in the <a href="https://binderhub.atap-binder.cloud.edu.au/v2/gh/Australian-Text-Analytics-Platform/topsbm.git/f607459d11bc690c3437f54a3a0341fc9d7084e6?labpath=workshop.ipynb"> ATAP Binder </a>.  </li>
+</li>
+
+<li> See also this <a href="https://github.com/martingerlach/hSBM_Topicmodel/blob/master/Multilayer_SBM_Tutorial.ipynb"> notebook </a> to go beyond just text data, the <a href="https://github.com/Australian-Text-Analytics-Platform/topsbm"> topSBM implementation </a>
+of the <a href="https://www.atap.edu.au/"> Australian Text Analytics Platform (ATAP) </a> for improved visualizations,  and the Python package <a href="https://graph-tool.skewed.de/">graph-tool</a> and its  <a href="https://graph-tool.skewed.de/static/doc/demos/inference/inference.html"> detailed documentation</a> for more details on the SBM inference</a>. </li>
+
+    </ul>
+
+  
+<h2> Installation and usage instructions </h2>
+  
+<p> To run it yourself, you need to:</p>
+
+	<ol>
+	  <li>  Install <a href="https://graph-tool.skewed.de/">graph-tool</a>:
+	    <ul>
+	      <li> see detailed <a href="https://git.skewed.de/count0/graph-tool/wikis/installation-instructions">installation instructions</a>.</li>
+	      <li> or using <a href="https://www.docker.com/">Docker</a>: <br> <i> docker pull tiagopeixoto/graph-tool </i> </li>
+
+	      <!-- <li> or using <a href="https://gitlab.com/ostrokach-forge/graph-tool"> Conda</a> (only for linux).</li> -->
+	    </ul>
+	  </li>
+
+	  <li>  Download the <a href="https://github.com/martingerlach/hSBM_Topicmodel"> package </a> SBM topic models:
+	    <ul>
+	      <li> Using <a href="https://git-scm.com/"> git </a>: <br> <i> git clone  https://github.com/martingerlach/hSBM_Topicmodel.git </i> </li>
+	      <li> or: download <a href="https://github.com/martingerlach/hSBM_Topicmodel/archive/master.zip"> zip file</a>. </li>
+	    </ul>
+	  </li>
+
+	  <li> Explore the tutorials using <a href="http://www.jupyter.org"> Jupyter </a> notebooks:
+	      <ul>
+	    <li>  <a href="https://github.com/martingerlach/hSBM_Topicmodel/blob/master/TopSBM-tutorial.ipynb"> TopSBM-tutorial.ipynb  </a>  (topsbm for text)  </li>
+      <li> <a href="https://github.com/martingerlach/hSBM_Topicmodel/blob/master/Multilayer_SBM_Tutorial.ipynb"> Multilayer_SBM_Tutorial.ipynb  </a> (topsbm for different types of data) </li>
+
+	  </li>
+	  </ol>
+
+
+<h2> Explanation: Topic modeling with text data </h2>
 
 <p> <a href="https://en.wikipedia.org/wiki/Topic_model" rel="nofollow"
 target="_blank"> Topic models </a> are a popular way to extract
@@ -107,53 +148,15 @@ We illustrate the differences in the document clustering when taking into accoun
 <IMG SRC="multilayer-clustering.png" style="display: block; margin: 0 auto; width: 800px" >
 
 
-<h2> Installation and usage instructions </h2>
-	
-<p> Check how to use topSBM in a <a href="TopSBM-tutorial.html"> simple example</a> and in a case <a href="https://github.com/martingerlach/hSBM_Topicmodel/blob/master/Multilayer_SBM_Tutorial.ipynb"> beyond just text data</a>.
-
-<p> The easiest way to run topSBM in your (small) corpus is using the <a href="https://colab.research.google.com/github/edugalt/hSBM_Topicmodel/blob/master/TopSBM-colab.ipynb"> Google Colab tutorial </a>.
-	
-	
-<p> The Python
-package <a href="https://graph-tool.skewed.de/">graph-tool</a> is
-needed, which also
-contains <a href="https://graph-tool.skewed.de/static/doc/demos/inference/inference.html">detailed
-documentation on SBM inference</a>.
-
-<p> To run it yourself, you need to:</p>
-
-	<ol>
-	  <li>  Install <a href="https://graph-tool.skewed.de/">graph-tool</a>:
-	    <ul>
-	      <li> see detailed <a href="https://git.skewed.de/count0/graph-tool/wikis/installation-instructions">installation instructions</a>.</li>
-	      <li> or using <a href="https://www.docker.com/">Docker</a>: <br> <i> docker pull tiagopeixoto/graph-tool </i> </li>
-
-	      <!-- <li> or using <a href="https://gitlab.com/ostrokach-forge/graph-tool"> Conda</a> (only for linux).</li> -->
-	    </ul>
-	  </li>
-
-	  <li>  Download the <a href="https://github.com/martingerlach/hSBM_Topicmodel"> package </a> SBM topic models:
-	    <ul>
-	      <li> Using <a href="https://git-scm.com/"> git </a>: <br> <i> git clone  https://github.com/martingerlach/hSBM_Topicmodel.git </i> </li>
-	      <li> or: download <a href="https://github.com/martingerlach/hSBM_Topicmodel/archive/master.zip"> zip file</a>. </li>
-	    </ul>
-	  </li>
-
-	  <li> Explore the tutorials using <a href="http://www.jupyter.org"> Jupyter </a> notebooks:
-	      <ul>
-	    <li> <i> jupyter-notebook TopSBM-tutorial.ipynb  </i>  (topsbm for text)  </li>
-      <li> <i> Multilayer_SBM_Tutorial.ipynb  </i> (topsbm for different types of data) </li>
-
-	  </li>
-	  </ol>
 
 
 	<h2> References: </h2>
 
 	<ul>
-    <li> C. C. Hyland, Y. Tao, L. Azizi, M. Gerlach, T. P. Peixoto, and E. G. Altmann  <em> Multilayer Networks for Text Analysis with Multiple Data Types </em>, <a href="https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-021-00288-5"> EPJ Data Science 10, 33 (2021) </a>.</li>
 	  <li> <a href="https://martingerlach.github.io/">M. Gerlach</a>, <a href="https://skewed.de/tiago">T. P. Peixoto</a>, and <a href="http://www.maths.usyd.edu.au/u/ega/">E. G. Altmann</a>, <em> A network approach to topic models, </em>  <a href="http://advances.sciencemag.org/content/4/7/eaaq1360"> Science Advances 4, eaaq1360 (2018) </a> or <a href="https://arxiv.org/abs/1708.01677"> [arXiv:1708.01677] </a>.</li>
-	  <li> T. P. Peixoto, <em> Bayesian stochastic blockmodeling  </em> <a href="https://arxiv.org/abs/1705.10225">[arXiv: 1705.10225]</a>.</li>
+	  <li> T. P. Peixoto, <em> Bayesian stochastic blockmodeling  </em>, <a href="https://doi.org/10.1002/9781119483298.ch11"> in Advances in Network Clustering and Blockmodeling" </a> (2019) or  <a href="https://arxiv.org/abs/1705.10225">[arXiv: 1705.10225]</a>.</li>
+	      <li> C. C. Hyland, Y. Tao, L. Azizi, M. Gerlach, T. P. Peixoto, and E. G. Altmann,  <em> Multilayer Networks for Text Analysis with Multiple Data Types </em>, <a href="https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-021-00288-5"> EPJ Data Science 10, 33 (2021) </a>.</li>
+    <li> H. Chan <em> TopSBM. V.1.0. Australian Text Analytics Platform, </em> <a href="https://github.com/Australian-Text-Analytics-Platform/topsbm">  Software </a> (2024). 
 	</ul>
 
 
